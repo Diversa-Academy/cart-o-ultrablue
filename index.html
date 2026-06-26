@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultrablue - BTG Pactual | É tempo de ir além</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        btg: {
+                            blue: '#002953',
+                            light: '#00478F',
+                            accent: '#4B96E6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ffffff 0%, #a5cbf5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-glow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 500px;
+            height: 120px;
+            background: radial-gradient(ellipse at center, rgba(59,130,246,0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .whatsapp-float {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 640px) {
+            .whatsapp-float {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+    <body class="bg-[#050B14] text-white font-sans antialiased selection:bg-btg-accent selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#050B14]/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/d270741e948ebca376089d86860edcb4d7067201/Completa%20%20Branco.png" alt="BTG Pactual" class="h-8 md:h-9">
+            </a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#beneficios" class="text-sm text-gray-300 hover:text-white transition">Benefícios</a>
+                <a href="#elegibilidade" class="text-sm text-gray-300 hover:text-white transition">Elegibilidade</a>
+                <a href="#lifestyle" class="text-sm text-gray-300 hover:text-white transition">Concierge</a>
+                <a href="#faq" class="text-sm text-gray-300 hover:text-white transition">FAQ</a>
+                <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                    ENTRAR EM CONTATO
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative" style="height: 170vh;">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0" style="height: 170vh;">
+            <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2050&auto=format&fit=crop" alt="Céu estrelado e montanhas" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#050B14]/80 via-[#050B14]/50 to-[#050B14]"></div>
+        </div>
+
+        <!-- Pinned Content -->
+        <div class="sticky top-0 z-30 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-6 text-center min-h-screen py-24 md:py-28">
+
+            <!-- Top Text -->
+            <div id="hero-top" class="mt-8 md:mt-12 mb-10 md:mb-16" style="will-change: transform, opacity;">
+                <span class="uppercase tracking-[0.3em] text-blue-400 text-sm font-semibold mb-3 block">BTG Ultrablue</span>
+                <h1 class="text-4xl md:text-6xl font-light leading-tight">
+                    É tempo de <br> <span class="font-semibold gradient-text">ir além.</span>
+                </h1>
+            </div>
+
+            <!-- Card -->
+            <div id="hero-card-container" class="w-full max-w-md mb-10 md:mb-16 relative flex items-center justify-center" style="min-height: 260px;">
+                <div id="card-glow-anim" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scale(0.3); width: 90%; max-width: 500px; height: 120px; background: radial-gradient(ellipse at center, rgba(59,130,246,0.5) 0%, transparent 70%); pointer-events: none; opacity: 0; will-change: transform, opacity; filter: blur(8px);"></div>
+                <img id="hero-card"
+                     src="https://raw.githubusercontent.com/Diversa-Academy/Images/301534f836a49e2e467e49f9528b5a73646481b7/cartao-ultrablue_upscayl_5x_upscayl-standard-4x.png"
+                     alt="Cartão Ultrablue BTG Pactual"
+                     class="w-full relative z-10 drop-shadow-2xl"
+                     style="transform: scale(0) rotateY(20deg); opacity: 0; transform-origin: center center; will-change: transform, opacity, filter;">
+            </div>
+
+            <!-- Bottom Text & Buttons -->
+            <div id="hero-bottom" style="opacity: 1;">
+                <p class="text-base md:text-lg text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    Muito mais que um cartão. O passaporte para um mundo de sofisticação, investimentos de alta performance e experiências desenhadas exclusivamente para você.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-base font-semibold transition w-full sm:w-auto shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center gap-2">
+                        CHECAR REQUISITOS <i class="ph ph-arrow-right text-xl"></i>
+                    </a>
+                    <a href="#beneficios" class="text-white border border-white/20 hover:bg-white/5 px-8 py-4 rounded-full text-base font-medium transition w-full sm:w-auto">
+                        Descobrir Benefícios
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#050B14] via-[#050B14]/95 to-transparent z-20 pointer-events-none"></div>
+    </section>
+
+    <!-- Financial Benefits -->
+    <section id="beneficios" class="py-24 bg-[#050B14] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <span class="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">Benefícios</span>
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 mt-4">A excelência financeira que seu patrimônio exige</h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Vantagens que mostram que é possível ir além naquilo que já parecia incrível.</p>
+            </div>
+
+            <!-- Destaques Mantidos -->
+            <div class="mb-12">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent z-10"></div>
+                    <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/imagemimpressionante.png" alt="Destaque Programa de Fidelidade Customizável" class="w-full h-full object-cover absolute inset-0">
+                    <div class="relative z-20 p-8 md:p-12 flex flex-col justify-center min-h-[300px]">
+                        <span class="text-blue-300 text-xs font-bold uppercase tracking-[0.2em] mb-2">Destaque</span>
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-4">Programa de Fidelidade Customizável</h3>
+                        <p class="text-gray-200 text-base max-w-lg leading-relaxed">
+                            Escolha entre ganhar até <strong class="text-white">3,5 pontos por dólar</strong> gasto ou <strong class="text-white">cashback de até 1,7%</strong> direto na sua fatura. A decisão é sua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefícios em Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-effect p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-xl flex items-center justify-center mb-4 text-blue-400">
+                        <i class="ph ph-globe-hemisphere-west text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2">IOF Zero</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Receba <strong class="text-white">3,28% de cashback</strong> nas compras internacionais para abater o custo do IOF.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-xl flex items-center justify-center mb-4 text-blue-400">
+                        <i class="ph ph-armchair text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2">SALA VIP ILIMITADA</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Acesso <strong class="text-white">gratuito e ilimitado</strong> às Salas VIP, com <strong class="text-white">12 convidados/ano</strong>.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-xl flex items-center justify-center mb-4 text-blue-400">
+                        <i class="ph ph-airplane-tilt text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2">Terminal BTG</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Acesso prioritário + <strong class="text-white">20% de desconto</strong> no terminal mais exclusivo da AL.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-2xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-xl flex items-center justify-center mb-4 text-blue-400">
+                        <i class="ph ph-shield-check text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-semibold mb-2">Seguro Viagem</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        <strong class="text-white">Seguro viagem incluso</strong> com cobertura para imprevistos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegibilidade (Layout simplificado sem bloco lateral) -->
+    <section id="elegibilidade" class="py-24 bg-[#08101a] border-y border-white/5 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <span class="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">Elegibilidade</span>
+            <h2 class="text-3xl md:text-5xl font-semibold mb-6 mt-4">Para quem está pronto para ir além</h2>
+            <p class="text-gray-300 text-lg font-light leading-relaxed mb-12 max-w-3xl mx-auto">
+                O Ultrablue é um convite especial para os clientes do <strong class="text-white">BTG Pactual</strong>. Para solicitar o seu cartão, é necessário ser cliente do banco e ter, no mínimo, <strong class="text-white">R$ 1 milhão em investimentos</strong> conosco.
+            </p>
+
+            <div class="glass-effect rounded-3xl p-8 md:p-12 text-left max-w-2xl mx-auto border border-blue-400/20">
+                <div class="space-y-8">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-blue-900/60 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="ph ph-check-circle text-blue-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-lg mb-1">Ser cliente BTG Pactual</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Abra sua conta e tenha acesso a todo ecossistema de investimentos do banco.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-blue-900/60 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="ph ph-check-circle text-blue-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-lg mb-1">Mínimo de R$ 1 milhão investido</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Patrimônio sob custódia no BTG Pactual em quaisquer ativos financeiros.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-blue-900/60 rounded-full flex items-center justify-center shrink-0 mt-1">
+                            <i class="ph ph-check-circle text-blue-400 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-lg mb-1">Convite Ultrablue</h4>
+                            <p class="text-sm text-gray-400 leading-relaxed">Após atingir os critérios, nosso time entra em contato para enviar o convite oficial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-white/10 flex justify-center">
+                    <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-base font-semibold transition inline-flex items-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.4)] w-full justify-center sm:w-auto">
+                        SABER MAIS <i class="ph ph-arrow-right text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concierge & Lifestyle -->
+    <section id="lifestyle" class="py-24 bg-[#08101a] border-y border-white/5 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-semibold mb-6">Concierge Ultrablue</h2>
+                        <p class="text-gray-300 text-lg font-light leading-relaxed mb-6">
+                            A sua porta de entrada para um mundo de experiências personalizadas. Planeje e apoie suas viagens ao redor do mundo, celebrações, eventos e fretamentos de luxo direto pelo WhatsApp.
+                        </p>
+                        <div class="flex items-center gap-3 text-sm text-blue-300">
+                            <i class="ph ph-clock text-xl"></i>
+                            <span>Atendimento de seg a sex, das 8h às 20h. Plantão para emergências.</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                        <div>
+                            <h4 class="font-semibold text-white flex items-center gap-2 mb-2">
+                                <i class="ph ph-map-pin-line text-blue-400"></i> Viagens sob Medida
+                            </h4>
+                            <p class="text-sm text-gray-400">Roteiros exclusivos, reservas em villas, ilhas, passagens de trens e cruzeiros de luxo.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white flex items-center gap-2 mb-2">
+                                <i class="ph ph-bed text-blue-400"></i> Benefícios em Hotéis
+                            </h4>
+                            <p class="text-sm text-gray-400">Early check-in, late check-out e upgrade em mais de 2.000 hotéis (Four Seasons, Rosewood).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white flex items-center gap-2 mb-2">
+                                <i class="ph ph-ticket text-blue-400"></i> Acesso a Eventos
+                            </h4>
+                            <p class="text-sm text-gray-400">Assessoria para ingressos de shows, esporte, óperas e eventos globais concorridos.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white flex items-center gap-2 mb-2">
+                                <i class="ph ph-fork-knife text-blue-400"></i> Alta Gastronomia
+                            </h4>
+                            <p class="text-sm text-gray-400">Reservas nos melhores e mais premiados restaurantes do mundo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-blue-600 rounded-3xl blur-[100px] opacity-20"></div>
+
+                    <!-- Carrossel Concierge Ultrablue -->
+                    <div class="relative z-10 rounded-3xl shadow-2xl border border-white/10 overflow-hidden">
+                        <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
+                            <div class="min-w-full">
+                                <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/main-service-1.avif" alt="Concierge Ultrablue" class="w-full aspect-video object-cover">
+                            </div>
+                            <div class="min-w-full">
+                                <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/main-service-2.avif" alt="Concierge Ultrablue" class="w-full aspect-video object-cover">
+                            </div>
+                            <div class="min-w-full">
+                                <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/main-service-3.avif" alt="Concierge Ultrablue" class="w-full aspect-video object-cover">
+                            </div>
+                            <div class="min-w-full">
+                                <img src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/memory-3.avif" alt="Concierge Ultrablue" class="w-full aspect-video object-cover">
+                            </div>
+                            <div class="min-w-full">
+                                <video src="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/private-suite_tlfhjk.mp4" class="w-full aspect-video object-cover" muted loop playsinline preload="auto" controls poster="https://raw.githubusercontent.com/Diversa-Academy/Images/a695ce0d51276531db75099a86312e9003ce959c/main-service-1.avif"></video>
+                            </div>
+                        </div>
+
+                        <button id="carousel-prev" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition" aria-label="Anterior">
+                            <i class="ph ph-caret-left text-xl"></i>
+                        </button>
+                        <button id="carousel-next" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition" aria-label="Próximo">
+                            <i class="ph ph-caret-right text-xl"></i>
+                        </button>
+
+                        <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
+                    </div>
+
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-10 -left-10 z-20 glass-effect p-6 rounded-2xl hidden md:block w-72">
+                        <h5 class="text-sm font-semibold mb-3 text-white">Marcas Parceiras</h5>
+                        <div class="flex flex-wrap gap-3 opacity-70">
+                            <span class="text-xs border border-white/20 px-2 py-1 rounded">Four Seasons</span>
+                            <span class="text-xs border border-white/20 px-2 py-1 rounded">Mandarin Oriental</span>
+                            <span class="text-xs border border-white/20 px-2 py-1 rounded">Emirates</span>
+                            <span class="text-xs border border-white/20 px-2 py-1 rounded">St. Regis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 relative overflow-hidden bg-[#001b38]">
+        <!-- Geometric background element -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600 rounded-full blur-[150px] opacity-20 translate-x-1/3 -translate-y-1/3"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-semibold mb-6">Isto é só o começo.</h2>
+        <p class="text-xl text-blue-200 mb-10 font-light">
+            Peça o seu cartão, viva cada momento ao máximo e vá além com o Ultrablue. Para mais informações ou solicitar o seu convite, fale diretamente com o Concierge.
+        </p>
+        
+        <div class="glass-effect rounded-3xl p-8 md:p-12 border border-blue-400/30 max-w-2xl mx-auto">
+            <p class="text-sm text-blue-300 uppercase tracking-widest mb-6">Quero conhecer o Ultrablue</p>
+            
+            <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="w-full bg-blue-600 hover:bg-blue-500 text-white px-8 py-5 rounded-xl text-lg font-semibold transition shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center gap-3 mb-6">
+                <i class="ph ph-whatsapp-logo text-2xl"></i> ENTRAR EM CONTATO
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-[#050B14]">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">FAQ</span>
+                <h2 class="text-3xl md:text-4xl font-semibold mb-4 mt-4">Dúvidas Frequentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>Quem pode solicitar o cartão Ultrablue?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        Clientes do BTG Pactual com, no mínimo, <strong class="text-white">R$ 1 milhão em investimentos</strong> sob custódia no banco. O convite é enviado automaticamente pelo time de relacionamento.
+                    </p>
+                </details>
+
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>Como funciona o cashback?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        Você pode optar por receber <strong class="text-white">cashback de 1,5%</strong> em compras nacionais e <strong class="text-white">1,7%</strong> em compras internacionais, creditado diretamente na fatura. Ou, se preferir, acumule <strong class="text-white">3 pts/USD</strong> (nacional) e <strong class="text-white">3,5 pts/USD</strong> (internacional) no programa de fidelidade.
+                    </p>
+                </details>
+
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>O cartão tem anuidade?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        A anuidade é <strong class="text-white">isenta</strong> para clientes elegíveis que mantêm o mínimo de R$ 1 milhão investido no BTG Pactual. Consulte seu assessor para verificar sua elegibilidade.
+                    </p>
+                </details>
+
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>Quantos cartões adicionais posso solicitar?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        O Ultrablue oferece <strong class="text-white">2 cartões adicionais isentos</strong> de taxa de adesão, ideais para familiares ou pessoas de confiança.
+                    </p>
+                </details>
+
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>Como entrar em contato com o Concierge?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        O Concierge Ultrablue atende de <strong class="text-white">segunda a sexta, das 8h às 20h</strong>, com plantão para emergências. O contato pode ser feito diretamente pelo WhatsApp.
+                    </p>
+                </details>
+
+                <details class="glass-effect rounded-2xl p-6 group open:border-blue-400/30 open:border transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer text-white font-medium text-lg [&::-webkit-details-marker]:hidden list-none">
+                        <span>O cartão é elegível para o Programa de Proteção?</span>
+                        <i class="ph ph-caret-down text-blue-400 text-xl transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-400 leading-relaxed">
+                        Sim. O Ultrablue conta com <strong class="text-white">seguro viagem incluso, proteção de compras</strong> e os benefícios padrão da bandeira Mastercard Black, além de coberturas estendidas para bagagens e imprevistos.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#02050A] py-12 border-t border-white/10 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center text-center gap-8">
+            
+            <!-- Slogan & Brand -->
+            <div class="space-y-3">
+                <p class="text-blue-400 text-xs font-bold uppercase tracking-[0.2em]">Cuidado que vai além dos seus Investimentos</p>
+                <p class="text-white text-xl font-medium tracking-wide">
+                    AI Necton <span class="font-light text-gray-500 mx-1">|</span> <span class="font-light text-gray-300">Uma empresa BTG Pactual</span>
+                </p>
+            </div>
+            
+            <!-- Contact & Ouvidoria -->
+            <div class="text-sm text-gray-400 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 glass-effect px-6 py-3 rounded-full border border-white/5">
+                <span class="flex items-center gap-2">
+                    <i class="ph ph-headset text-blue-400 text-lg"></i> Ouvidoria: 0800 7220 048
+                </span>
+                <span class="hidden sm:block w-1 h-1 bg-gray-600 rounded-full"></span>
+                <a href="https://www.btgpactual.com/ouvidoria" target="_blank" class="flex items-center gap-2 hover:text-white transition duration-300">
+                    <i class="ph ph-globe text-blue-400 text-lg"></i> www.btgpactual.com/ouvidoria
+                </a>
+            </div>
+
+            <div class="w-full max-w-2xl h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-2"></div>
+
+            <!-- Legal -->
+            <div class="text-xs text-gray-600 max-w-2xl">
+                <p>Serviços de Viagens e Concierge sujeitos a Termos e Condições. Oferta restrita a clientes elegíveis do BTG Pactual.</p>
+                <p class="mt-2">© 2026 BTG Pactual. Todos os direitos reservados.</p>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        function updateHero() {
+            var card = document.getElementById('hero-card');
+            var section = document.getElementById('hero');
+            if (!card || !section) return;
+
+            var rect = section.getBoundingClientRect();
+            var scrolled = -rect.top;
+
+            // Animação termina bem mais cedo (após rolar cerca de 60% da altura da tela em vez de 75% de toda a seção)
+            var animationEnd = window.innerHeight * 0.6; 
+            var progress = animationEnd > 0 ? Math.min(1, scrolled / animationEnd) : 0;
+            progress = Math.max(0, progress);
+
+            var eased = 1 - Math.pow(1 - progress, 3);
+
+            var scale = eased;
+            var rotateY = (1 - eased) * 20;
+            var translateY = 60 * (1 - eased);
+            
+            // Faz a opacidade chegar a 100% logo nas primeiras rolagens (3x mais rápido que o movimento de escala)
+            var opacity = Math.min(1, progress * 3); 
+            var brightness = 0.4 + 0.6 * eased;
+
+            card.style.transform = 'scale(' + scale + ') rotateY(' + rotateY + 'deg) translateY(' + translateY + 'px)';
+            card.style.opacity = opacity;
+            card.style.filter = 'brightness(' + brightness + ')';
+
+            var glow = document.getElementById('card-glow-anim');
+            if (glow) {
+                glow.style.opacity = Math.min(1, progress * 2.5);
+                glow.style.transform = 'translateX(-50%) scale(' + (0.3 + 0.7 * eased) + ')';
+            }
+
+            var topEl = document.getElementById('hero-top');
+            if (topEl) {
+                topEl.style.transform = 'translateY(-' + (30 * progress) + 'px)';
+                topEl.style.opacity = Math.max(0, 1 - progress * 0.5);
+            }
+
+            var bottomEl = document.getElementById('hero-bottom');
+            if (bottomEl) {
+                bottomEl.style.opacity = '1';
+                var bottomP = Math.min(1, progress / 0.5);
+                var bottomEased = 1 - Math.pow(1 - bottomP, 2);
+                bottomEl.style.transform = 'translateY(' + (20 * (1 - bottomEased)) + 'px)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateHero();
+            window.addEventListener('scroll', updateHero, { passive: true });
+            window.addEventListener('resize', updateHero);
+        });
+    </script>
+
+    <script>
+    // Concierge Carousel
+    (function() {
+        var track = document.getElementById('carousel-track');
+        if (!track) return;
+        var slides = track.children;
+        var total = slides.length;
+        var current = 0;
+        var autoInterval = null;
+
+        var dotsContainer = document.getElementById('carousel-dots');
+        for (var i = 0; i < total; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300';
+            dot.setAttribute('data-index', i);
+            dot.addEventListener('click', function() {
+                goTo(parseInt(this.getAttribute('data-index')));
+            });
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateDots() {
+            var dots = dotsContainer.children;
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].className = i === current
+                    ? 'w-3 h-3 rounded-full bg-white transition-all duration-300'
+                    : 'w-2 h-2 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300';
+            }
+        }
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            updateDots();
+            resetAuto();
+            var slides = track.children;
+            for (var i = 0; i < slides.length; i++) {
+                var video = slides[i].querySelector('video');
+                if (video) {
+                    if (i === current) {
+                        video.play().catch(function(){});
+                    } else {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                }
+            }
+        }
+
+        function nextSlide() {
+            goTo((current + 1) % total);
+        }
+
+        function prevSlide() {
+            goTo((current - 1 + total) % total);
+        }
+
+        function resetAuto() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(nextSlide, 5000);
+        }
+
+        document.getElementById('carousel-next').addEventListener('click', nextSlide);
+        document.getElementById('carousel-prev').addEventListener('click', prevSlide);
+
+        var container = track.parentElement;
+        container.addEventListener('mouseenter', function() {
+            if (autoInterval) clearInterval(autoInterval);
+        });
+        container.addEventListener('mouseleave', resetAuto);
+
+        var touchStartX = 0;
+        container.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].clientX;
+            if (autoInterval) clearInterval(autoInterval);
+        }, { passive: true });
+        container.addEventListener('touchend', function(e) {
+            var diff = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) prevSlide();
+                else nextSlide();
+            }
+            resetAuto();
+        }, { passive: true });
+
+        updateDots();
+        resetAuto();
+    })();
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-[999] bg-green-500 hover:bg-green-400 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/30 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-green-500/40 max-sm:bottom-3 max-sm:right-3 max-sm:w-12 max-sm:h-12" aria-label="Fale conosco pelo WhatsApp">
+        <i class="ph ph-whatsapp-logo text-2xl max-sm:text-xl"></i>
+    </a>
+</body>
+</html>
