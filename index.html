@@ -87,7 +87,7 @@
                 <a href="#elegibilidade" class="text-sm text-gray-300 hover:text-white transition">Elegibilidade</a>
                 <a href="#lifestyle" class="text-sm text-gray-300 hover:text-white transition">Concierge</a>
                 <a href="#faq" class="text-sm text-gray-300 hover:text-white transition">FAQ</a>
-                <a href="https://wa.me/554499601600?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-medium transition shadow-[0_0_15px_rgba(37,99,235,0.3)]">
                     ENTRAR EM CONTATO
                 </a>
             </div>
@@ -95,18 +95,18 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative" style="height: 170vh;">
+    <section id="hero" class="relative" style="height: auto; min-height: 100vh;">
         <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0" style="height: 170vh;">
+        <div class="absolute inset-0 z-0" style="height: 100%;">
             <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2050&auto=format&fit=crop" alt="Céu estrelado e montanhas" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-b from-[#050B14]/80 via-[#050B14]/50 to-[#050B14]"></div>
         </div>
 
         <!-- Pinned Content -->
-        <div class="sticky top-0 z-30 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-6 text-center min-h-screen py-24 md:py-28">
+        <div class="relative z-30 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-6 text-center min-h-screen py-24 md:py-28">
 
             <!-- Top Text -->
-            <div id="hero-top" class="mt-8 md:mt-12 mb-10 md:mb-16" style="will-change: transform, opacity;">
+            <div id="hero-top" class="mt-8 md:mt-12 mb-10 md:mb-16">
                 <span class="uppercase tracking-[0.3em] text-blue-400 text-sm font-semibold mb-3 block">BTG Ultrablue</span>
                 <h1 class="text-4xl md:text-6xl font-light leading-tight">
                     É tempo de <br> <span class="font-semibold gradient-text">ir além.</span>
@@ -115,16 +115,15 @@
 
             <!-- Card -->
             <div id="hero-card-container" class="w-full max-w-md mb-10 md:mb-16 relative flex items-center justify-center" style="min-height: 260px;">
-                <div id="card-glow-anim" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) scale(0.3); width: 90%; max-width: 500px; height: 120px; background: radial-gradient(ellipse at center, rgba(59,130,246,0.5) 0%, transparent 70%); pointer-events: none; opacity: 0; will-change: transform, opacity; filter: blur(8px);"></div>
                 <img id="hero-card"
                      src="https://raw.githubusercontent.com/Diversa-Academy/Images/301534f836a49e2e467e49f9528b5a73646481b7/cartao-ultrablue_upscayl_5x_upscayl-standard-4x.png"
                      alt="Cartão Ultrablue BTG Pactual"
                      class="w-full relative z-10 drop-shadow-2xl"
-                     style="transform: scale(0) rotateY(20deg); opacity: 0; transform-origin: center center; will-change: transform, opacity, filter;">
+                     style="transform: scale(1); opacity: 1; transform-origin: center center;">
             </div>
 
             <!-- Bottom Text & Buttons -->
-            <div id="hero-bottom" style="opacity: 1;">
+            <div id="hero-bottom">
                 <p class="text-base md:text-lg text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                     Muito mais que um cartão. O passaporte para um mundo de sofisticação, investimentos de alta performance e experiências desenhadas exclusivamente para você.
                 </p>
@@ -252,7 +251,7 @@
                 </div>
 
                 <div class="mt-10 pt-8 border-t border-white/10 flex justify-center">
-                    <a href="https://wa.me/554499601600?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-base font-semibold transition inline-flex items-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.4)] w-full justify-center sm:w-auto">
+                    <a href="https://wa.me/5544999371668?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Cart%C3%A3o%20UltraBlue%20do%20BTG%20Pactual" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full text-base font-semibold transition inline-flex items-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.4)] w-full justify-center sm:w-auto">
                         SABER MAIS <i class="ph ph-arrow-right text-xl"></i>
                     </a>
                 </div>
@@ -481,59 +480,7 @@
     </footer>
 
     <script>
-        function updateHero() {
-            var card = document.getElementById('hero-card');
-            var section = document.getElementById('hero');
-            if (!card || !section) return;
-
-            var rect = section.getBoundingClientRect();
-            var scrolled = -rect.top;
-
-            // Animação termina bem mais cedo (após rolar cerca de 60% da altura da tela em vez de 75% de toda a seção)
-            var animationEnd = window.innerHeight * 0.6; 
-            var progress = animationEnd > 0 ? Math.min(1, scrolled / animationEnd) : 0;
-            progress = Math.max(0, progress);
-
-            var eased = 1 - Math.pow(1 - progress, 3);
-
-            var scale = eased;
-            var rotateY = (1 - eased) * 20;
-            var translateY = 60 * (1 - eased);
-            
-            // Faz a opacidade chegar a 100% logo nas primeiras rolagens (3x mais rápido que o movimento de escala)
-            var opacity = Math.min(1, progress * 3); 
-            var brightness = 0.4 + 0.6 * eased;
-
-            card.style.transform = 'scale(' + scale + ') rotateY(' + rotateY + 'deg) translateY(' + translateY + 'px)';
-            card.style.opacity = opacity;
-            card.style.filter = 'brightness(' + brightness + ')';
-
-            var glow = document.getElementById('card-glow-anim');
-            if (glow) {
-                glow.style.opacity = Math.min(1, progress * 2.5);
-                glow.style.transform = 'translateX(-50%) scale(' + (0.3 + 0.7 * eased) + ')';
-            }
-
-            var topEl = document.getElementById('hero-top');
-            if (topEl) {
-                topEl.style.transform = 'translateY(-' + (30 * progress) + 'px)';
-                topEl.style.opacity = Math.max(0, 1 - progress * 0.5);
-            }
-
-            var bottomEl = document.getElementById('hero-bottom');
-            if (bottomEl) {
-                bottomEl.style.opacity = '1';
-                var bottomP = Math.min(1, progress / 0.5);
-                var bottomEased = 1 - Math.pow(1 - bottomP, 2);
-                bottomEl.style.transform = 'translateY(' + (20 * (1 - bottomEased)) + 'px)';
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            updateHero();
-            window.addEventListener('scroll', updateHero, { passive: true });
-            window.addEventListener('resize', updateHero);
-        });
+        // Hero animation removed - card is now static
     </script>
 
     <script>
